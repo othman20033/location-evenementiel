@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirection vers HTTPS (à activer en production)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Servir les fichiers statiques directement
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Tout le reste passe par le front controller
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Sécurité : empêcher l'accès direct aux dossiers sensibles
+<FilesMatch "\.(env|sql|md|log)$">
+    Require all denied
+</FilesMatch>
+
+# Headers de sécurité de base
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
