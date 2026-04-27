@@ -26,7 +26,7 @@ $phoneClean      = $site['phone_clean'] ?? preg_replace('/\s+/', '', $site['phon
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
 </head>
 <body data-route="<?= e($current) ?>">

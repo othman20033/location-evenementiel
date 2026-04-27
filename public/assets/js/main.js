@@ -11,6 +11,54 @@
 (function () {
     'use strict';
 
+    /* ---------- Hero Slider (Swiper) ---------- */
+    const heroSlider = new Swiper('.hero-slider', {
+        loop: true,
+        speed: 1000,
+        parallax: true,
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        }
+    });
+
+    /* ---------- Mouse Parallax Effect (Expert Level) ---------- */
+    const HERO = document.querySelector('.hero-slider');
+    if (HERO) {
+        HERO.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const x = (clientX / window.innerWidth - 0.5) * 30; // 30px max shift
+            const y = (clientY / window.innerHeight - 0.5) * 30;
+            
+            const activeSlideBg = HERO.querySelector('.swiper-slide-active .slide-bg');
+            const activeGhost = HERO.querySelector('.swiper-slide-active .ghost-number');
+            
+            if (activeSlideBg) {
+                activeSlideBg.style.transform = `scale(1.1) translate(${x}px, ${y}px)`;
+            }
+            if (activeGhost) {
+                activeGhost.style.transform = `translate(${x * -1.5}px, ${y * -1.5}px)`;
+            }
+        });
+        
+        HERO.addEventListener('mouseleave', () => {
+            const bgs = HERO.querySelectorAll('.slide-bg');
+            bgs.forEach(bg => bg.style.transform = '');
+        });
+    }
+
     /* ---------- Header scroll state ---------- */
     const header = document.getElementById('siteHeader');
     const onScroll = () => {

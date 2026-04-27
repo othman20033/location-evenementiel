@@ -69,6 +69,7 @@ $phoneClean = $site['phone_clean'] ?? preg_replace('/\s+/', '', $site['phone']);
     <i class="lucide lucide-arrow-up"></i>
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="<?= e(asset('js/main.js')) ?>" defer></script>
 </body>
 </html>

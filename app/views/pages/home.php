@@ -11,41 +11,63 @@ $categoryLabel = [];
 foreach ($categories as $c) { $categoryLabel[$c['slug']] = $c['title']; }
 ?>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-        <div class="hero-overlay"></div>
-    </div>
-
-    <div class="container hero-inner">
-        <span class="eyebrow reveal">Location de matériel événementiel</span>
-        <h1 class="hero-title reveal">
-            Le bon matériel,<br>
-            au <em>bon moment</em>.
-        </h1>
-        <p class="hero-lead reveal">
-            Meubles de bureau, équipement informatique et sonorisation professionnelle.
-            Livraison, installation et reprise sur tout le Maroc.
-        </p>
-        <div class="hero-cta reveal">
-            <a href="<?= e(url('/contact')) ?>" class="btn btn-primary btn-lg">
-                Demander un devis
-                <i class="lucide lucide-arrow-right"></i>
-            </a>
-            <a href="tel:<?= e($phoneClean) ?>" class="btn btn-ghost btn-lg">
-                <i class="lucide lucide-phone"></i>
-                <?= e($site['phone']) ?>
-            </a>
+<!-- HERO SLIDER -->
+<section class="hero-slider swiper">
+    <div class="noise-overlay"></div>
+    <div class="swiper-wrapper">
+        <!-- Slide 1: Meuble -->
+        <div class="swiper-slide">
+            <div class="slide-bg" style="background-image: url('<?= e(asset('img/slider/furniture.png')) ?>')"></div>
+            <div class="hero-overlay"></div>
+            <div class="ghost-number">01</div>
+            <div class="container slide-inner" data-swiper-parallax="-300">
+                <div class="eyebrow-wrap"><span class="eyebrow">L'Art de Recevoir</span></div>
+                <div class="title-wrap"><h1 class="hero-title">Mobilier d'<em>Exception</em></h1></div>
+                <div class="lead-wrap"><p class="hero-lead">Sublimez vos espaces avec une collection de mobilier pensée pour les événements les plus prestigieux du Royaume.</p></div>
+                <div class="hero-cta">
+                    <a href="<?= e(url('/meuble-de-bureau')) ?>" class="btn btn-primary">Voir la collection</a>
+                    <a href="<?= e(url('/contact')) ?>" class="btn btn-ghost">Nous contacter</a>
+                </div>
+            </div>
         </div>
 
-        <div class="hero-stats reveal">
-            <div><strong>3</strong><span>Catégories</span></div>
-            <div><strong>500+</strong><span>Événements livrés</span></div>
-            <div><strong>24h</strong><span>Délai de réponse</span></div>
+        <!-- Slide 2: Tech -->
+        <div class="swiper-slide">
+            <div class="slide-bg" style="background-image: url('<?= e(asset('img/slider/tech.png')) ?>')"></div>
+            <div class="hero-overlay"></div>
+            <div class="ghost-number">02</div>
+            <div class="container slide-inner" data-swiper-parallax="-300">
+                <div class="eyebrow-wrap"><span class="eyebrow">Avant-Garde</span></div>
+                <div class="title-wrap"><h1 class="hero-title"><em>Technologies</em> Invisibles</h1></div>
+                <div class="lead-wrap"><p class="hero-lead">Parcs informatiques et solutions tactiles de pointe, intégrés avec une discrétion absolue dans votre décor.</p></div>
+                <div class="hero-cta">
+                    <a href="<?= e(url('/informatique')) ?>" class="btn btn-primary">Solutions Mobiles</a>
+                    <a href="<?= e(url('/realisations')) ?>" class="btn btn-ghost">Portfolio</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Audio -->
+        <div class="swiper-slide">
+            <div class="slide-bg" style="background-image: url('<?= e(asset('img/slider/audio.png')) ?>')"></div>
+            <div class="hero-overlay"></div>
+            <div class="ghost-number">03</div>
+            <div class="container slide-inner" data-swiper-parallax="-300">
+                <div class="eyebrow-wrap"><span class="eyebrow">Pureté Acoustique</span></div>
+                <div class="title-wrap"><h1 class="hero-title">Sonorisation <em>Haute-Couture</em></h1></div>
+                <div class="lead-wrap"><p class="hero-lead">Une ingénierie sonore précise pour une immersion totale. La clarté parfaite au service de vos discours.</p></div>
+                <div class="hero-cta">
+                    <a href="<?= e(url('/sonorisation')) ?>" class="btn btn-primary">Explorer l'audio</a>
+                    <a href="tel:<?= e($phoneClean) ?>" class="btn btn-ghost">Appeler un expert</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <a href="#categories" class="hero-scroll" aria-label="Faire défiler"><span></span></a>
+    <!-- Layout Aids -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </section>
 
 <!-- CATÉGORIES -->
