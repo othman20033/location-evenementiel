@@ -43,24 +43,34 @@ $phoneClean      = $site['phone_clean'] ?? preg_replace('/\s+/', '', $site['phon
             </span>
         </a>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primaryNav">
-            <span></span><span></span><span></span>
-        </button>
-
         <nav class="primary-nav" id="primaryNav" aria-label="Navigation principale">
             <ul>
-                <li><a href="<?= e(url('/')) ?>"                  class="<?= $current === '/' ? 'is-active' : '' ?>">Accueil</a></li>
-                <li><a href="<?= e(url('/a-propos-de-nous')) ?>"  class="<?= $current === '/a-propos-de-nous' ? 'is-active' : '' ?>">À propos de nous</a></li>
-                <li><a href="<?= e(url('/meuble-de-bureau')) ?>"  class="<?= $current === '/meuble-de-bureau' ? 'is-active' : '' ?>">Meuble de bureau</a></li>
-                <li><a href="<?= e(url('/informatique')) ?>"      class="<?= $current === '/informatique' ? 'is-active' : '' ?>">Informatique</a></li>
-                <li><a href="<?= e(url('/sonorisation')) ?>"      class="<?= $current === '/sonorisation' ? 'is-active' : '' ?>">Sonorisation</a></li>
-                <li><a href="<?= e(url('/contact')) ?>"           class="<?= $current === '/contact' ? 'is-active' : '' ?>">Contact</a></li>
+                <li><a href="<?= e(url('/')) ?>" class="<?= $current === '/' ? 'is-active' : '' ?>">Accueil</a></li>
+                <li><a href="<?= e(url('/a-propos-de-nous')) ?>" class="<?= $current === '/a-propos-de-nous' ? 'is-active' : '' ?>">À propos</a></li>
+                <li class="has-dropdown">
+                    <a href="#" class="<?= in_array($current, ['/meuble-de-bureau', '/informatique', '/sonorisation']) ? 'is-active' : '' ?>" onclick="return false;">
+                        Nos Matériels
+                        <i class="lucide lucide-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="<?= e(url('/meuble-de-bureau')) ?>">Meuble de bureau</a></li>
+                        <li><a href="<?= e(url('/informatique')) ?>">Informatique</a></li>
+                        <li><a href="<?= e(url('/sonorisation')) ?>">Sonorisation</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?= e(url('/contact')) ?>" class="<?= $current === '/contact' ? 'is-active' : '' ?>">Contact</a></li>
             </ul>
+        </nav>
+
+        <div class="header-actions">
             <a href="tel:<?= e($phoneClean) ?>" class="btn btn-primary nav-cta" aria-label="Appeler maintenant">
                 <i class="lucide lucide-phone"></i>
                 <span><?= e($site['phone']) ?></span>
             </a>
-        </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primaryNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </header>
 
