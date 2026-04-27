@@ -11,104 +11,41 @@ $categoryLabel = [];
 foreach ($categories as $c) { $categoryLabel[$c['slug']] = $c['title']; }
 ?>
 
-<!-- HERO SLIDER -->
-<section class="hero" id="heroSlider">
-    <div class="slider-container">
-        <!-- Slide 1: Meubles -->
-        <div class="slide is-active">
-            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1900&q=85')"></div>
-            <div class="hero-overlay"></div>
-            <div class="container hero-inner">
-                <span class="eyebrow">Location de matériel haut de gamme</span>
-                <h1 class="hero-title">
-                    Le bon matériel,<br>
-                    au <em>bon moment</em>.
-                </h1>
-                <p class="hero-lead">
-                    Meubles de bureau, équipement informatique et sonorisation professionnelle.
-                    Livraison, installation et reprise sur tout le Maroc.
-                </p>
-                <div class="hero-cta">
-                    <a href="<?= e(url('/contact')) ?>" class="btn btn-primary btn-lg">
-                        Démarrer mon projet
-                        <i class="lucide lucide-arrow-right"></i>
-                    </a>
-                    <a href="tel:<?= e($phoneClean) ?>" class="btn btn-ghost btn-lg">
-                        <i class="lucide lucide-phone"></i>
-                        <?= e($site['phone']) ?>
-                    </a>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-inner">
+        <span class="eyebrow reveal">Location de matériel événementiel</span>
+        <h1 class="hero-title reveal">
+            Le bon matériel,<br>
+            au <em>bon moment</em>.
+        </h1>
+        <p class="hero-lead reveal">
+            Meubles de bureau, équipement informatique et sonorisation professionnelle.
+            Livraison, installation et reprise sur tout le Maroc.
+        </p>
+        <div class="hero-cta reveal">
+            <a href="<?= e(url('/contact')) ?>" class="btn btn-primary btn-lg">
+                Demander un devis
+                <i class="lucide lucide-arrow-right"></i>
+            </a>
+            <a href="tel:<?= e($phoneClean) ?>" class="btn btn-ghost btn-lg">
+                <i class="lucide lucide-phone"></i>
+                <?= e($site['phone']) ?>
+            </a>
         </div>
 
-        <!-- Slide 2: Informatique -->
-        <div class="slide">
-            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=1900&q=85')"></div>
-            <div class="hero-overlay"></div>
-            <div class="container hero-inner">
-                <span class="eyebrow">Expertise Technologique</span>
-                <h2 class="hero-title">
-                    Solutions <em>Informatiques</em><br>
-                    Clé-en-main.
-                </h2>
-                <p class="hero-lead">
-                    Écrans géants, PC haute performance et bornes interactives.
-                    Un parc informatique moderne pour vos conférences et salons.
-                </p>
-                <div class="hero-cta">
-                    <a href="<?= e(url('/informatique')) ?>" class="btn btn-primary btn-lg">
-                        Voir le catalogue IT
-                        <i class="lucide lucide-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3: Sonorisation -->
-        <div class="slide">
-            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1900&q=85')"></div>
-            <div class="hero-overlay"></div>
-            <div class="container hero-inner">
-                <span class="eyebrow">Expérience Sonore</span>
-                <h2 class="hero-title">
-                    Une <em>Sonorisation</em><br>
-                    Irréprochable.
-                </h2>
-                <p class="hero-lead">
-                    Systèmes audio professionnels, micros sans fil et régie complète.
-                    Donnez de la voix à vos événements les plus prestigieux.
-                </p>
-                <div class="hero-cta">
-                    <a href="<?= e(url('/sonorisation')) ?>" class="btn btn-primary btn-lg">
-                        Découvrir le matériel audio
-                        <i class="lucide lucide-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="hero-stats reveal">
+            <div><strong>3</strong><span>Catégories</span></div>
+            <div><strong>500+</strong><span>Événements livrés</span></div>
+            <div><strong>24h</strong><span>Délai de réponse</span></div>
         </div>
     </div>
 
-    <!-- Slider Controls -->
-    <div class="slider-controls">
-        <button class="slider-prev" aria-label="Slide Précédent"><i class="lucide lucide-chevron-left"></i></button>
-        <div class="slider-dots"></div>
-        <button class="slider-next" aria-label="Slide Suivant"><i class="lucide lucide-chevron-right"></i></button>
-    </div>
-
-    <!-- Progress bar -->
-    <div class="slider-progress">
-        <div class="progress-bar"></div>
-    </div>
-
-    <div class="hero-stats-wrapper">
-        <div class="container">
-            <div class="hero-stats">
-                <div><strong>3</strong><span>Catégories</span></div>
-                <div><strong>500+</strong><span>Événements livrés</span></div>
-                <div><strong>24h</strong><span>Délai de réponse</span></div>
-            </div>
-        </div>
-    </div>
+    <a href="#categories" class="hero-scroll" aria-label="Faire défiler"><span></span></a>
 </section>
 
 <!-- CATÉGORIES -->
@@ -224,18 +161,6 @@ foreach ($categories as $c) { $categoryLabel[$c['slug']] = $c['title']; }
                     </footer>
                 </article>
             <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- PARTENAIRES -->
-<section class="section partners-section" style="background: var(--c-bg); border-top: 1px solid var(--c-line);">
-    <div class="container">
-        <div class="partners-grid" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4rem; opacity: 0.6;">
-            <img src="https://upload.wikimedia.org/wikipedia/fr/0/07/Logo_OCP.svg" alt="OCP" style="height: 40px; filter: grayscale(1);">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Technopark_Casablanca_Logo.png" alt="Technopark" style="height: 35px; filter: grayscale(1);">
-            <img src="https://upload.wikimedia.org/wikipedia/fr/4/4b/Logo_Attijariwafa_bank.svg" alt="Attijariwafa" style="height: 35px; filter: grayscale(1);">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Logo_BMCE_Bank.svg/2560px-Logo_BMCE_Bank.svg.png" alt="BMCE" style="height: 30px; filter: grayscale(1);">
         </div>
     </div>
 </section>
