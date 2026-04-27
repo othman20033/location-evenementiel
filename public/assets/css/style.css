@@ -29,8 +29,8 @@
 
     --container: 1200px;
 
-    --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-serif:   'Cormorant Garamond', 'Times New Roman', serif;
+    --font-sans:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif:   'Bodoni Moda', 'Times New Roman', serif;
 
     --ease: cubic-bezier(.2, .7, .2, 1);
 
