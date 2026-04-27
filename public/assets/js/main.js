@@ -142,5 +142,69 @@
                 submitBtn.innerHTML = 'Envoi en cours…';
             }
         });
+    /* ---------- Hero Slider ---------- */
+    const HERO_DURATION = 6000;
+    const slider = document.getElementById('heroSlider');
+    if (slider) {
+        const slides = slider.querySelectorAll('.slide');
+        const dotsContainer = slider.querySelector('.slider-dots');
+        const prevBtn = slider.querySelector('.slider-prev');
+        const nextBtn = slider.querySelector('.slider-next');
+        const progressBar = slider.querySelector('.progress-bar');
+        
+        let currentSlide = 0;
+        let slideInterval;
+        let progressInterval;
+        let startTime;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = `dot ${i === 0 ? 'is-active' : ''}`;
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.dot');
+
+        const updateDots = (index) => {
+            dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+        };
+
+        const resetProgress = () => {
+            progressBar.style.width = '0%';
+            startTime = Date.now();
+        };
+
+        const updateProgress = () => {
+            const elapsed = Date.now() - startTime;
+            const percentage = Math.min((elapsed / HERO_DURATION) * 100, 100);
+            progressBar.style.width = `${percentage}%`;
+        };
+
+        const goToSlide = (index) => {
+            slides[currentSlide].classList.remove('is-active');
+            dots[currentSlide].classList.remove('is-active');
+            
+            currentSlide = (index + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('is-active');
+            dots[currentSlide].classList.add('is-active');
+            
+            resetProgress();
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, HERO_DURATION);
+        };
+
+        const nextSlide = () => goToSlide(currentSlide + 1);
+        const prevSlide = () => goToSlide(currentSlide - 1);
+
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        // Start
+        resetProgress();
+        slideInterval = setInterval(nextSlide, HERO_DURATION);
+        progressInterval = setInterval(updateProgress, 16);
     }
 })();

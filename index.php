@@ -47,8 +47,11 @@ $router->get('/a-propos-de-nous',  'AboutController@index');
 $router->get('/meuble-de-bureau',  'CategoryController@meuble');
 $router->get('/informatique',      'CategoryController@informatique');
 $router->get('/sonorisation',      'CategoryController@sonorisation');
-$router->get('/contact',           'ContactController@index');
-$router->post('/contact',          'ContactController@store');
+$router->get('/realisations',     'RealisationController@index');
+$router->get('/blog',             'BlogController@index');
+$router->get('/partenaires',      'PartnerController@index');
+$router->get('/contact',          'ContactController@index');
+$router->post('/contact',         'ContactController@store');
 
 // Lancement du dispatch
 $router->dispatch();

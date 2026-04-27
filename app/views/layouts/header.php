@@ -49,7 +49,7 @@ $phoneClean      = $site['phone_clean'] ?? preg_replace('/\s+/', '', $site['phon
                 <li><a href="<?= e(url('/a-propos-de-nous')) ?>" class="<?= $current === '/a-propos-de-nous' ? 'is-active' : '' ?>">À propos</a></li>
                 <li class="has-dropdown">
                     <a href="#" class="<?= in_array($current, ['/meuble-de-bureau', '/informatique', '/sonorisation']) ? 'is-active' : '' ?>" onclick="return false;">
-                        Nos Matériels
+                        Matériels
                         <i class="lucide lucide-chevron-down"></i>
                     </a>
                     <ul class="dropdown">
@@ -58,6 +58,9 @@ $phoneClean      = $site['phone_clean'] ?? preg_replace('/\s+/', '', $site['phon
                         <li><a href="<?= e(url('/sonorisation')) ?>">Sonorisation</a></li>
                     </ul>
                 </li>
+                <li><a href="<?= e(url('/realisations')) ?>" class="<?= $current === '/realisations' ? 'is-active' : '' ?>">Réalisations</a></li>
+                <li><a href="<?= e(url('/blog')) ?>" class="<?= $current === '/blog' ? 'is-active' : '' ?>">Blog</a></li>
+                <li><a href="<?= e(url('/partenaires')) ?>" class="<?= $current === '/partenaires' ? 'is-active' : '' ?>">Partenaires</a></li>
                 <li><a href="<?= e(url('/contact')) ?>" class="<?= $current === '/contact' ? 'is-active' : '' ?>">Contact</a></li>
             </ul>
         </nav>
