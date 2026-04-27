@@ -412,24 +412,6 @@ body[data-route="/"] .site-header:not(.is-scrolled) .nav-toggle span { backgroun
     mix-blend-mode: overlay;
 }
 
-.ghost-number {
-    position: absolute;
-    bottom: -15%;
-    right: -5%;
-    font-family: var(--font-serif);
-    font-size: 40vw;
-    font-weight: 700;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.03);
-    pointer-events: none;
-    z-index: 2;
-    transition: transform 1.5s var(--ease);
-}
-
-.swiper-slide-active .ghost-number {
-    transform: translateY(-10%);
-}
-
 .swiper-slide {
     position: relative;
     overflow: hidden;

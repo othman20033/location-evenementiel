@@ -43,13 +43,9 @@
             const y = (clientY / window.innerHeight - 0.5) * 30;
             
             const activeSlideBg = HERO.querySelector('.swiper-slide-active .slide-bg');
-            const activeGhost = HERO.querySelector('.swiper-slide-active .ghost-number');
             
             if (activeSlideBg) {
                 activeSlideBg.style.transform = `scale(1.1) translate(${x}px, ${y}px)`;
-            }
-            if (activeGhost) {
-                activeGhost.style.transform = `translate(${x * -1.5}px, ${y * -1.5}px)`;
             }
         });
         

@@ -19,7 +19,6 @@ foreach ($categories as $c) { $categoryLabel[$c['slug']] = $c['title']; }
         <div class="swiper-slide">
             <div class="slide-bg" style="background-image: url('<?= e(asset('img/slider/furniture.png')) ?>')"></div>
             <div class="hero-overlay"></div>
-            <div class="ghost-number">01</div>
             <div class="container slide-inner" data-swiper-parallax="-300">
                 <div class="eyebrow-wrap"><span class="eyebrow">L'Art de Recevoir</span></div>
                 <div class="title-wrap"><h1 class="hero-title">Mobilier d'<em>Exception</em></h1></div>
@@ -35,7 +34,6 @@ foreach ($categories as $c) { $categoryLabel[$c['slug']] = $c['title']; }
         <div class="swiper-slide">
             <div class="slide-bg" style="background-image: url('<?= e(asset('img/slider/tech.png')) ?>')"></div>
             <div class="hero-overlay"></div>
-            <div class="ghost-number">02</div>
             <div class="container slide-inner" data-swiper-parallax="-300">
                 <div class="eyebrow-wrap"><span class="eyebrow">Avant-Garde</span></div>
                 <div class="title-wrap"><h1 class="hero-title"><em>Technologies</em> Invisibles</h1></div>
@@ -51,7 +49,6 @@ foreach ($categories as $c) { $categoryLabel[$c['slug']] = $c['title']; }
         <div class="swiper-slide">
             <div class="slide-bg" style="background-image: url('<?= e(asset('img/slider/audio.png')) ?>')"></div>
             <div class="hero-overlay"></div>
-            <div class="ghost-number">03</div>
             <div class="container slide-inner" data-swiper-parallax="-300">
                 <div class="eyebrow-wrap"><span class="eyebrow">Pureté Acoustique</span></div>
                 <div class="title-wrap"><h1 class="hero-title">Sonorisation <em>Haute-Couture</em></h1></div>
