@@ -51,7 +51,7 @@ final class Product
             [
                 'name'        => 'Chaises',
                 'category'    => 'meuble-de-bureau',
-                'description' => 'Chaises de conférence, chaises Napoléon, Tiffany, banquettes — toutes finitions et coloris disponibles.',
+                'description' => 'Chaises de conférence, chaises Napoléon, Tiffany, banquettes - toutes finitions et coloris disponibles.',
                 'image'       => 'https://images.unsplash.com/photo-1503602642458-232111445657?w=900&q=80',
             ],
             [

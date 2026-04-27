@@ -40,7 +40,7 @@ $errors = $errors ?? [];
                 </li>
                 <li>
                     <span class="contact-icon"><i class="lucide lucide-clock"></i></span>
-                    <div><strong>Horaires</strong><span>Lun – Sam : 9h - 19h</span></div>
+                    <div><strong>Horaires</strong><span>Lun - Sam : 9h - 19h</span></div>
                 </li>
             </ul>
 
@@ -99,7 +99,7 @@ $errors = $errors ?? [];
                             $types = ['', 'Mariage', 'Séminaire', 'Soirée privée', 'Conférence', 'Autre'];
                             $selected = $old['event_type'] ?? '';
                             foreach ($types as $t):
-                                $label = $t === '' ? '— Sélectionner —' : $t;
+                                $label = $t === '' ? 'Sélectionner' : $t;
                             ?>
                                 <option value="<?= e($t) ?>" <?= $selected === $t ? 'selected' : '' ?>><?= e($label) ?></option>
                             <?php endforeach; ?>

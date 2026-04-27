@@ -15,11 +15,11 @@ $phoneClean      = $site['phone_clean'] ?? preg_replace('/\s+/', '', $site['phon
     <meta name="theme-color" content="#0b0d12">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="<?= e($pageTitle . ' — ' . $site['name']) ?>">
+    <meta property="og:title" content="<?= e($pageTitle . ' | ' . $site['name']) ?>">
     <meta property="og:description" content="<?= e($pageDescription) ?>">
     <meta property="og:type" content="website">
 
-    <title><?= e($pageTitle . ' — ' . $site['name']) ?></title>
+    <title><?= e($pageTitle . ' | ' . $site['name']) ?></title>
 
     <!-- Fonts: Bodoni Moda (Editorial Serif) & Plus Jakarta Sans (Modern Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
